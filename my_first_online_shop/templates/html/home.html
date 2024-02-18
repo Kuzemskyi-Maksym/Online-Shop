@@ -11,43 +11,12 @@
 
 {% block content %}
 
-    <div class="about">
-        <a class="bg_links social portfolio" href="#" target="_blank">
-            <span class="icon"></span>
-        </a>
-        <a class="bg_links social dribbble" href="#" target="_blank">
-            <span class="icon"></span>
-        </a>
-        <a class="bg_links social linkedin" href="#" target="_blank">
-            <span class="icon"></span>
-        </a>
-        <a class="bg_links logo"></a>
-    </div>
-
-
-    <header class="mainHeading">
-        <div class="mainHeading__content">
-            <article class="mainHeading__text">
-                <p class="mainHeading__preTitle">Online Shop</p>
-                <h2 class="mainHeading__title">modern and stylish</h2>
-                <p class="mainHeading__description">
-                    "To be irreplaceable, you must always be different" - Coco Chanel.
-                </p>
-                <button class="cta">know more</button>
-            </article>
-
-            <figure class="mainHeading__image">
-                <img src="{% static 'images/home_page.avif' %}" alt=""/>
-            </figure>
-        </div>
-    </header>
+    
 
 {% endblock content %}
 
 
 {% block js %}
     {{ block.super }}
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.js'></script>
     <script src="{% static 'js/home_page.js' %}"></script>
 {% endblock js %}

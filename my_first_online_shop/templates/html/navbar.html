@@ -1,0 +1,62 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}" />
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/shop">
+      <img src="{% static 'images/logo.png' %}" alt="" width="30" height="24" class="d-inline-block align-text-top logo_photo" />
+      TechNoir
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Перемкнути навігацію"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <form class="d-flex mx-auto me-2">
+        <input class="form_search form-control me-2" type="search" placeholder="Search for..." aria-label="Пошук" />
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/shop">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="categories.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <a class="dropdown-item" href="/shop/phones">Phones</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/shop/laptops">Laptops</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/shop/tv">TV</a>
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li>
+              <a class="dropdown-item" href="/shop/categories">View all</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/shop/sales">Sales</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/shop/cantacts">Contacts</a>
+        </li>
+        {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="/shop/logout">Logout</a>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="/shop/register">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/shop/login">Login</a>
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>

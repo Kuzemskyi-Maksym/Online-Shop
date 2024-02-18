@@ -9,7 +9,8 @@
         Online Shop
       {% endblock %}
     </title>
-    <link rel="icon" type="image/png" href="{% static 'images/icons/icon.png' %}" />
+    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}" />
+    
     {% block css %}
       <link rel="stylesheet" href="{% static 'css/reset.css' %}" />
     {% endblock %}
@@ -18,38 +19,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
   </head>
   <body>
-    <div class="container sticky-top header">
-      <nav class="navbar navbar-expand-lg bg-body-tertiary min_height">
-        <div class="container-fluid mainNav__links">
-          <div class="mainNav__logo" style="font-weight: bolder">Online Shop</div>
-          <ul class="nav justify-content-center">
-            <li class="nav-item">
-              <a class="nav-link" href="/shop/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/shop/categories/">Categories</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/shop/products/create/">Create product</a>
-            </li>
-            {% if not user.is_authenticated %}
-              <li class="nav-item">
-                <a class="nav-link" href="/shop/registration/">Register</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/shop/login/">Login</a>
-              </li>
-            {% else %}
-              <li class="nav-item">
-                <a class="nav-link" href="/shop/logout/">Logout</a>
-              </li>
-            {% endif %}
-          </ul>
-        </div>
-      </nav>
-    </div>
-
-    {% include 'html/messages.html' %}
+    {% include 'html/navbar.html' %}
     <div class="container">
       {% block content %}
 
