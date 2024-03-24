@@ -1,0 +1,11 @@
+.all_main {
+    margin-top: 20px !important;
+    width: 100% !important;
+}
+
+.filters {
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    padding-left: 60px !important;
+}
+
