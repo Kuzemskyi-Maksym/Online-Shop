@@ -37,67 +37,83 @@
               <form>
                 <div class="border-bottom pb-4 mb-4">
                   <h5>Price, UAH</h5>
-                  TODO: ADD PRICE FILTER
+                  <div class="d-grid gap-2 price_">
+                    <div class="price-input">
+                      <div class="field">
+                        <span>From:</span>
+                        <input type="number" class="input-min" value="11500" />
+                      </div>
+                      <div class="separator"></div>
+                      <div class="field">
+                        <span>To:</span>
+                        <input type="number" class="input-max" value="56000" />
+                      </div>
+                    </div>
+                    <div class="slider">
+                      <div class="progress"></div>
+                    </div>
+                    <div class="range-input">
+                      <input type="range" class="range-min" min="0" max="75000" value="11500" />
+                      <input type="range" class="range-max" min="0" max="75000" value="56000" />
+                    </div>
+                  </div>
                 </div>
 
+                <!-- Ptoducer -->
                 <div class="border-bottom pb-4 mb-4">
                   <h5>Producer</h5>
-
-                  <div class="d-grid gap-2">
-                    <!-- Checkboxes -->
-
+                  <div class="d-grid gap-2" id="producerList">
                     <!-- prettier-ignore -->
                     {% for producer in producers %}
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="{{ producer.0 }}" id="producer_{{ producer.0 }}"  />
+                      <div class="form-check producer-item">
+                        <input class="form-check-input" type="checkbox" value="{{ producer.0 }}" id="producer_{{ producer.0 }}" />
                         <label class="form-check-label" for="producer_{{ producer.0 }}">{{ producer.1 }}</label>
                       </div>
                     {% endfor %}
                     <!-- prettier-ignore -->
-
-                    <!-- End Checkboxes -->
                   </div>
+                  <button id="viewMoreProducer" class="less_more_btn btn btn-primary">View More</button>
+                  <button id="viewLessProducer" class="less_more_btn btn btn-primary" style="display: none;">View Less</button>
                 </div>
 
+                <!-- Processor -->
                 <div class="border-bottom pb-4 mb-4">
                   <h5>Processor</h5>
-
-                  <div class="d-grid gap-2">
-                    <!-- Checkboxes -->
+                  <div class="d-grid gap-2" id="processorList">
                     <!-- prettier-ignore -->
                     {% for processor in processors %}
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="{{ processor.0 }}" id="processor_{{ processor.0 }}"  />
+                      <div class="form-check processor-item">
+                        <input class="form-check-input" type="checkbox" value="{{ processor.0 }}" id="processor_{{ processor.0 }}" />
                         <label class="form-check-label" for="processor_{{ processor.0 }}">{{ processor.1 }}</label>
                       </div>
                     {% endfor %}
                     <!-- prettier-ignore -->
-                    <!-- End Checkboxes -->
                   </div>
+                  <button id="viewMoreProcessor" class="less_more_btn btn btn-primary">View More</button>
+                  <button id="viewLessProcessor" class="less_more_btn btn btn-primary" style="display: none;">View Less</button>
                 </div>
 
+                <!-- Processor Cores -->
                 <div class="border-bottom pb-4 mb-4">
                   <h5>Processor Cores</h5>
-
-                  <div class="d-grid gap-2">
-                    <!-- Checkboxes -->
+                  <div class="d-grid gap-2" id="processorCoresList">
                     <!-- prettier-ignore -->
-                    {% for proseccor_core in proseccor_cores %}
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="{{ proseccor_core.0 }}" id="proseccor_core_{{ proseccor_core.0 }}"  />
-                        <label class="form-check-label" for="proseccor_core_{{ proseccor_core.0 }}">{{ proseccor_core.1 }}</label>
+                    {% for processor_core in processor_cores %}
+                      <div class="form-check processor-core-item">
+                        <input class="form-check-input" type="checkbox" value="{{ processor_core.0 }}" id="processor_core_{{ processor_core.0 }}" />
+                        <label class="form-check-label" for="processor_core_{{ processor_core.0 }}">{{ processor_core.1 }}</label>
                       </div>
                     {% endfor %}
                     <!-- prettier-ignore -->
-                    <!-- End Checkboxes -->
                   </div>
+                  <button id="viewMoreProcessorCores" class="less_more_btn btn btn-primary">View More</button>
+                  <button id="viewLessProcessorCores" class="less_more_btn btn btn-primary" style="display: none;">View Less</button>
                 </div>
 
                 <div class="border-bottom pb-4 mb-4">
                   <h5>Screen Coating</h5>
 
                   <div class="d-grid gap-2">
-                    <!-- Checkboxes -->
                     <!-- prettier-ignore -->
                     {% for screen_coating in screen_coatings %}
                       <div class="form-check">
@@ -106,100 +122,93 @@
                       </div>
                     {% endfor %}
                     <!-- prettier-ignore -->
-                    <!-- End Checkboxes -->
                   </div>
                 </div>
 
                 <div class="border-bottom pb-4 mb-4">
                   <h5>Screen Diagonal</h5>
-
-                  <div class="d-grid gap-2">
-                    <!-- Checkboxes -->
+                  <div class="d-grid gap-2" id="screenDiagonalList">
                     <!-- prettier-ignore -->
                     {% for screen_diagonal in screen_diagonals %}
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="{{ screen_diagonal.0 }}" id="screen_diagonal_{{ screen_diagonal.0 }}"  />
+                      <div class="form-check screen-diagonal-item">
+                        <input class="form-check-input" type="checkbox" value="{{ screen_diagonal.0 }}" id="screen_diagonal_{{ screen_diagonal.0 }}" />
                         <label class="form-check-label" for="screen_diagonal_{{ screen_diagonal.0 }}">{{ screen_diagonal.1 }}</label>
                       </div>
                     {% endfor %}
                     <!-- prettier-ignore -->
-                    <!-- End Checkboxes -->
                   </div>
+                  <button id="viewMoreScreenDiagonal" class="less_more_btn btn btn-primary">View More</button>
+                  <button id="viewLessScreenDiagonal" class="less_more_btn btn btn-primary" style="display: none;">View Less</button>
                 </div>
 
                 <div class="border-bottom pb-4 mb-4">
                   <h5>Screen Resolution</h5>
-
-                  <div class="d-grid gap-2">
-                    <!-- Checkboxes -->
+                  <div class="d-grid gap-2" id="screenResolutionList">
                     <!-- prettier-ignore -->
                     {% for screen_resolution in screen_resolutions %}
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="{{ screen_resolution.0 }}" id="screen_resolution_{{ screen_resolution.0 }}"  />
+                      <div class="form-check screen-resolution-item">
+                        <input class="form-check-input" type="checkbox" value="{{ screen_resolution.0 }}" id="screen_resolution_{{ screen_resolution.0 }}" />
                         <label class="form-check-label" for="screen_resolution_{{ screen_resolution.0 }}">{{ screen_resolution.1 }}</label>
                       </div>
                     {% endfor %}
                     <!-- prettier-ignore -->
-                    <!-- End Checkboxes -->
                   </div>
+                  <button id="viewMoreScreenResolution" class="less_more_btn btn btn-primary">View More</button>
+                  <button id="viewLessScreenResolution" class="less_more_btn btn btn-primary" style="display: none;">View Less</button>
                 </div>
 
                 <div class="border-bottom pb-4 mb-4">
                   <h5>RAM</h5>
-
-                  <div class="d-grid gap-2">
-                    <!-- Checkboxes -->
+                  <div class="d-grid gap-2" id="ramList">
                     <!-- prettier-ignore -->
                     {% for ram in rams %}
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="{{ ram.0 }}" id="ram_{{ ram.0 }}"  />
+                      <div class="form-check ram-item">
+                        <input class="form-check-input" type="checkbox" value="{{ ram.0 }}" id="ram_{{ ram.0 }}" />
                         <label class="form-check-label" for="ram_{{ ram.0 }}">{{ ram.1 }}</label>
                       </div>
                     {% endfor %}
                     <!-- prettier-ignore -->
-                    <!-- End Checkboxes -->
                   </div>
+                  <button id="viewMoreRam" class="less_more_btn btn btn-primary">View More</button>
+                  <button id="viewLessRam" class="less_more_btn btn btn-primary" style="display: none;">View Less</button>
                 </div>
 
                 <div class="border-bottom pb-4 mb-4">
                   <h5>SSD Scope</h5>
-
-                  <div class="d-grid gap-2">
-                    <!-- Checkboxes -->
+                  <div class="d-grid gap-2" id="ssdScopeList">
                     <!-- prettier-ignore -->
                     {% for ssd_scope in ssd_scopes %}
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="{{ ssd_scope.0 }}" id="ssd_scope_{{ ssd_scope.0 }}"  />
+                      <div class="form-check ssd-scope-item">
+                        <input class="form-check-input" type="checkbox" value="{{ ssd_scope.0 }}" id="ssd_scope_{{ ssd_scope.0 }}" />
                         <label class="form-check-label" for="ssd_scope_{{ ssd_scope.0 }}">{{ ssd_scope.1 }}</label>
                       </div>
                     {% endfor %}
                     <!-- prettier-ignore -->
-                    <!-- End Checkboxes -->
                   </div>
+                  <button id="viewMoreSsdScope" class="less_more_btn btn btn-primary">View More</button>
+                  <button id="viewLessSsdScope" class="less_more_btn btn btn-primary" style="display: none;">View Less</button>
                 </div>
 
                 <div class="border-bottom pb-4 mb-4">
                   <h5>OS</h5>
-
-                  <div class="d-grid gap-2">
-                    <!-- Checkboxes -->
+                  <div class="d-grid gap-2" id="osList">
                     <!-- prettier-ignore -->
                     {% for os in oss %}
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="{{ os.0 }}" id="os_{{ os.0 }}"  />
+                      <div class="form-check os-item">
+                        <input class="form-check-input" type="checkbox" value="{{ os.0 }}" id="os_{{ os.0 }}" />
                         <label class="form-check-label" for="os_{{ os.0 }}">{{ os.1 }}</label>
                       </div>
                     {% endfor %}
                     <!-- prettier-ignore -->
-                    <!-- End Checkboxes -->
                   </div>
+                  <button id="viewMoreOs" class="less_more_btn btn btn-primary">View More</button>
+                  <button id="viewLessOs" class="less_more_btn btn btn-primary" style="display: none;">View Less</button>
                 </div>
 
                 <div class="border-bottom pb-4 mb-4">
                   <h5>Video Card Type</h5>
 
                   <div class="d-grid gap-2">
-                    <!-- Checkboxes -->
                     <!-- prettier-ignore -->
                     {% for video_card_type in video_card_types %}
                       <div class="form-check">
@@ -208,42 +217,39 @@
                       </div>
                     {% endfor %}
                     <!-- prettier-ignore -->
-                    <!-- End Checkboxes -->
                   </div>
                 </div>
 
                 <div class="border-bottom pb-4 mb-4">
                   <h5>Additionally</h5>
-
-                  <div class="d-grid gap-2">
-                    <!-- Checkboxes -->
+                  <div class="d-grid gap-2" id="additionallyList">
                     <!-- prettier-ignore -->
                     {% for additionally in additionallyes %}
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="{{ additionally.0 }}" id="additionally_{{ additionally.0 }}"  />
+                      <div class="form-check additionally-item">
+                        <input class="form-check-input" type="checkbox" value="{{ additionally.0 }}" id="additionally_{{ additionally.0 }}" />
                         <label class="form-check-label" for="additionally_{{ additionally.0 }}">{{ additionally.1 }}</label>
                       </div>
                     {% endfor %}
                     <!-- prettier-ignore -->
-                    <!-- End Checkboxes -->
                   </div>
+                  <button id="viewMoreAdditionally" class="less_more_btn btn btn-primary">View More</button>
+                  <button id="viewLessAdditionally" class="less_more_btn btn btn-primary" style="display: none;">View Less</button>
                 </div>
 
                 <div class="border-bottom pb-4 mb-4">
                   <h5>Color</h5>
-
-                  <div class="d-grid gap-2">
-                    <!-- Checkboxes -->
+                  <div class="d-grid gap-2" id="colorList">
                     <!-- prettier-ignore -->
                     {% for color in colors %}
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="{{ color.0 }}" id="color_{{ color.0 }}"  />
+                      <div class="form-check color-item">
+                        <input class="form-check-input" type="checkbox" value="{{ color.0 }}" id="color_{{ color.0 }}" />
                         <label class="form-check-label" for="color_{{ color.0 }}">{{ color.1 }}</label>
                       </div>
                     {% endfor %}
                     <!-- prettier-ignore -->
-                    <!-- End Checkboxes -->
                   </div>
+                  <button id="viewMoreColor" class="less_more_btn btn btn-primary">View More</button>
+                  <button id="viewLessColor" class="less_more_btn btn btn-primary" style="display: none;">View Less</button>
                 </div>
 
                 <div class="border-bottom pb-4 mb-4">
@@ -333,7 +339,7 @@
                 </div>
 
                 <div class="d-grid">
-                  <button type="button" class="btn btn-white btn-transition">Clear all</button>
+                  <button type="button" id="clearAll" class="btn btn-white btn-transition">Clear all</button>
                 </div>
               </form>
             </div>
@@ -348,4 +354,5 @@
 {% block js %}
   {{ block.super }}
   <script src="{% static 'js/home.js' %}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 {% endblock %}

@@ -1,10 +1,110 @@
 .all_main {
-    margin-top: 20px !important;
+  margin-top: 20px !important;
+  width: 100% !important;
 }
 
 .filters {
-    background-color: rgb(255, 255, 255);
-    height: 100%;
-    padding-left: 60px !important;
+  background-color: rgb(255, 255, 255);
+  height: 100%;
+  padding-left: 60px !important;
 }
 
+.price-input {
+  width: 100%;
+  display: flex;
+  margin: 30px 0 35px;
+}
+
+.price-input .field {
+  height: 45px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.field input {
+  width: 55%;
+  height: 100%;
+  outline: none;
+  font-size: 19px;
+  text-align: center;
+  margin-left: 12px;
+  border-radius: 5px;
+  border: 1px solid #999;
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.price-input .separator {
+  /* width: 130px; */
+  display: flex;
+  font-size: 19px;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider {
+  height: 5px;
+  border-radius: 5px;
+  background: #ddd;
+  position: relative;
+}
+
+.slider .progress {
+  height: 5px;
+  left: 15%;
+  right: 25%;
+  position: absolute;
+  border-radius: 5px;
+  background: #17a2b8;
+}
+
+.range-input {
+  position: relative;
+}
+
+.range-input input {
+  position: absolute;
+  top: -12.5px;
+  height: 5px;
+  width: 100%;
+  background: none;
+  pointer-events: none;
+  -webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  height: 17px;
+  width: 17px;
+  border-radius: 50%;
+  -webkit-appearance: none;
+  pointer-events: auto;
+  background: #17a2b8;
+}
+
+input[type="range"]::-moz-range-thumb {
+  height: 17px;
+  width: 17px;
+  border: none;
+  border-radius: 50%;
+  -moz-appearance: none;
+  pointer-events: auto;
+  background: #17a2b8;
+}
+
+.price_block_filter {
+  scale: 0.9 !important;
+  margin-left: -15px;
+}
+
+.hidden {
+  display: none;
+}
+
+.less_more_btn {
+  margin-top: 10px;
+}

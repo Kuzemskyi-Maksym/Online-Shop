@@ -11,7 +11,7 @@ def home(request):
         'screen_diagonals': choises.SCREEN_DIAGONAL,
         'screen_resolutions': choises.SCREEN_RESOLUTION,    
         'rams': choises.RAM,
-        'proseccor_cores': choises.PROCESSOR_CORES,
+        'processor_cores': choises.PROCESSOR_CORES,
         'ssd_scopes': choises.SSD_SCOPE,
         "oss": choises.OS,
         'video_card_types': choises.VIDEO_CARD_TYPE,

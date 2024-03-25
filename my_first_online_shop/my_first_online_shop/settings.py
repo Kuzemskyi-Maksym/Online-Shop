@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "shop",
     "psycopg2",
     "multiselectfield",
+    "django_filters",
 ]
 
 MIDDLEWARE = [
