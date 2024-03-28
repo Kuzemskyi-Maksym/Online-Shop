@@ -1,5 +1,5 @@
 .all_main {
-  margin-top: 20px !important;
+  margin-top: 100px !important;
   width: 100% !important;
 }
 
@@ -108,3 +108,5 @@ input[type="range"]::-moz-range-thumb {
 .less_more_btn {
   margin-top: 10px;
 }
+
+

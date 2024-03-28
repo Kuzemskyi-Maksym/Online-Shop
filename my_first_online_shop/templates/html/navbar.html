@@ -2,55 +2,82 @@
 
 <link rel="stylesheet" href="{% static 'css/navbar.css' %}" />
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/shop">
-      <img src="{% static 'images/logo.png' %}" alt="" width="30" height="24" class="d-inline-block align-text-top logo_photo" />
-      TechNoir
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Перемкнути навігацію"><span class="navbar-toggler-icon"></span></button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <form class="d-flex mx-auto me-2">
-        <input class="form_search form-control me-2" type="search" placeholder="Search for..." aria-label="Пошук" />
-        <button class="btn btn-outline-success search_button" type="submit">Search</button>
-      </form>
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/shop">Home</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="categories.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li>
-              <a class="dropdown-item" href="/shop/phones">Phones</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="/shop/laptops">Laptops</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="/shop/tv">TV</a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/shop/sales">Sales</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/shop/cantacts">Contacts</a>
-        </li>
-        {% if user.is_authenticated %}
-          <li class="nav-item">
-            <a class="nav-link" href="/shop/logout">Logout</a>
-          </li>
-        {% else %}
-          <li class="nav-item">
-            <a class="nav-link" href="/shop/register">Register</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/shop/login">Login</a>
-          </li>
-        {% endif %}
-      </ul>
+<div class="site-mobile-menu site-navbar-target burger">
+  <div class="site-mobile-menu-header">
+    <a class="navbar-brand" href="/shop"><img src="{% static 'images/logo.png' %}" alt="" class="d-inline-block align-text-top logo_photo_burger" /></a>
+    <div class="site-mobile-menu-close mt-3">
+      <span class="icon-close2 js-menu-toggle"></span>
     </div>
   </div>
+  <div class="site-mobile-menu-body"></div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="row align-items-center position-relative main_nav">
+    <div class="col-3 ml-auto text-right order-2"></div>
+
+    <div class="col-9 order-1 text-left mr-auto">
+      <span class="d-inline-block d-lg-block"><a href="#" class="text-light site-menu-toggle js-menu-toggle py-5"><span class="icon-menu h3 text-light"></span></a></span>
+
+      <nav class="site-navigation text-right ml-auto d-none d-lg-none" role="navigation">
+        <ul class="site-menu main-menu js-clone-nav ml-auto">
+          <li class="active">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li>
+            <a href="about.html" class="nav-link">About</a>
+          </li>
+          <li>
+            <a href="services.html" class="nav-link">Services</a>
+          </li>
+          <li>
+            <a href="blog.html" class="nav-link">Blog</a>
+          </li>
+          <li>
+            <a href="contact.html" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <a class="navbar-brand" href="/shop"><img src="{% static 'images/logo.png' %}" alt="" class="d-inline-block align-text-top logo_photo" /></a>
+
+  {% if user.is_authenticated %}
+    <form class="d-flex mx-auto me-2" id="search_form">
+      <input class="input_form_search_registered form-control me-2" type="search" placeholder="Search for..." aria-label="Пошук" />
+      <button class="btn btn-outline-success search_button" type="submit">Search</button>
+    </form>
+    <div class="language container row col-1 ms-5">
+      <div class="row d-flex justify-content-between">
+        <div class="h5 col-5 text-white p-0 my-0 mx-0">UA</div>
+        <div class="m-0 p-0 vr"></div>
+        <div class="h5 text-white col-5 p-0 my-0">EN</div>
+      </div>
+    </div>
+    <div class="container registered p-0 m-0" style="width: 300px;">
+      <div class="row align-items-center registered d-flex justify-content-evenly m-0">
+        <img src="{% static 'images/orders.svg' %}" alt="" title="orders" class="orders p-0 col-2" />
+        <img src="{% static 'images/wishlist.svg' %}" alt="" title="wishlist" class="wishlist p-0 col-2" />
+        <img src="{% static 'images/cart.svg' %}" alt="" title="cart" class="cart p-0 col-2" />
+        <img src="{% static 'images/user_acc.svg' %}" alt="" title="account" class="account p-0 col-2" />
+      </div>
+    </div>
+  {% else %}
+    <form class="d-flex mx-auto me-2" id="search_form">
+      <input class="input_form_search_not_registered form-control me-2" type="search" placeholder="Search for..." aria-label="Пошук" />
+      <button class="btn btn-outline-success search_button" type="submit">Search</button>
+    </form>
+    <div class="language container row col-1 ms-5">
+      <div class="row d-flex justify-content-between">
+        <div class="h5 col-5 text-white p-0 my-0 mx-0">UA</div>
+        <div class="m-0 p-0 vr"></div>
+        <div class="h5 text-white col-5 p-0 my-0">EN</div>
+      </div>
+    </div>
+    <div class="container visitors p-0 m-0" style="width: 300x;">
+      <div class="row align-items-center d-flex justify-content-center m-0" style="margin: auto !important;">
+        <img src="{% static 'images/user_acc.svg' %}" alt="" title="sign In/sign Up" class="signIn_signUp p-0" />
+      </div>
+    </div>
+  {% endif %}
 </nav>
